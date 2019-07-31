@@ -1,0 +1,31 @@
+.bytecode 50.0
+.class public final synchronized com/alipay/sdk/cons/b
+.super java/lang/Object
+
+.field public static final 'a' Ljava/lang/String; = "https"
+
+.field public static final 'b' Ljava/lang/String; = "user_agent"
+
+.field public static final 'c' Ljava/lang/String; = "tid"
+
+.field public static final 'd' Ljava/lang/String; = "external_info"
+
+.field public static final 'e' Ljava/lang/String; = "has_alipay"
+
+.field public static final 'f' Ljava/lang/String; = "has_msp_app"
+
+.field public static final 'g' Ljava/lang/String; = "utdid"
+
+.field public static final 'h' Ljava/lang/String; = "app_key"
+
+.field public static final 'i' Ljava/lang/String; = "trideskey"
+
+.field public static final 'j' Ljava/lang/String; = "new_client_key"
+
+.method public <init>()V
+aload 0
+invokespecial java/lang/Object/<init>()V
+return
+.limit locals 1
+.limit stack 1
+.end method

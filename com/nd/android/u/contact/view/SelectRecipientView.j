@@ -1,0 +1,315 @@
+.bytecode 50.0
+.class public synchronized com/nd/android/u/contact/view/SelectRecipientView
+.super android/widget/LinearLayout
+.inner class inner com/nd/android/u/contact/view/SelectRecipientView$1
+.inner class inner com/nd/android/u/contact/view/SelectRecipientView$2
+
+.field private static final 'maxnum' I = 19
+
+
+.field private 'callback' Lcom/product/android/business/headImage/ProfileHeadImageCacheCallback;
+
+.field private 'faceImg' Landroid/widget/ImageView;
+
+.field private 'grouplist' Ljava/util/List; signature "Ljava/util/List<Lcom/product/android/commonInterface/contact/OapUser;>;"
+
+.field private 'mcontext' Landroid/content/Context;
+
+.field 'myCheckedListener' Landroid/widget/CompoundButton$OnCheckedChangeListener;
+
+.field protected 'myonclicklistener' Landroid/view/View$OnClickListener;
+
+.field private 'phoneText' Landroid/widget/TextView;
+
+.field private 'recipient_cb' Landroid/widget/CheckBox;
+
+.field private 'selectcontractlist' Ljava/util/ArrayList; signature "Ljava/util/ArrayList<Lcom/product/android/commonInterface/chat/SearchContract;>;"
+
+.field private 'user' Lcom/product/android/commonInterface/chat/SearchContract;
+
+.field private 'userLayout' Landroid/widget/LinearLayout;
+
+.field private 'usernameText' Landroid/widget/TextView;
+
+.method public <init>(Landroid/content/Context;Lcom/product/android/business/headImage/ProfileHeadImageCacheCallback;Ljava/util/ArrayList;Ljava/util/List;)V
+.signature "(Landroid/content/Context;Lcom/product/android/business/headImage/ProfileHeadImageCacheCallback;Ljava/util/ArrayList<Lcom/product/android/commonInterface/chat/SearchContract;>;Ljava/util/List<Lcom/product/android/commonInterface/contact/OapUser;>;)V"
+aload 0
+aload 1
+invokespecial android/widget/LinearLayout/<init>(Landroid/content/Context;)V
+aload 0
+new com/nd/android/u/contact/view/SelectRecipientView$1
+dup
+aload 0
+invokespecial com/nd/android/u/contact/view/SelectRecipientView$1/<init>(Lcom/nd/android/u/contact/view/SelectRecipientView;)V
+putfield com/nd/android/u/contact/view/SelectRecipientView/myonclicklistener Landroid/view/View$OnClickListener;
+aload 0
+new com/nd/android/u/contact/view/SelectRecipientView$2
+dup
+aload 0
+invokespecial com/nd/android/u/contact/view/SelectRecipientView$2/<init>(Lcom/nd/android/u/contact/view/SelectRecipientView;)V
+putfield com/nd/android/u/contact/view/SelectRecipientView/myCheckedListener Landroid/widget/CompoundButton$OnCheckedChangeListener;
+aload 0
+aload 4
+putfield com/nd/android/u/contact/view/SelectRecipientView/grouplist Ljava/util/List;
+aload 0
+aload 3
+putfield com/nd/android/u/contact/view/SelectRecipientView/selectcontractlist Ljava/util/ArrayList;
+aload 0
+aload 1
+putfield com/nd/android/u/contact/view/SelectRecipientView/mcontext Landroid/content/Context;
+aload 0
+aload 2
+putfield com/nd/android/u/contact/view/SelectRecipientView/callback Lcom/product/android/business/headImage/ProfileHeadImageCacheCallback;
+aload 0
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/getView()V
+return
+.limit locals 5
+.limit stack 4
+.end method
+
+.method static synthetic access$000(Lcom/nd/android/u/contact/view/SelectRecipientView;)Landroid/widget/CheckBox;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+areturn
+.limit locals 1
+.limit stack 1
+.end method
+
+.method static synthetic access$100(Lcom/nd/android/u/contact/view/SelectRecipientView;)Lcom/product/android/commonInterface/chat/SearchContract;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+areturn
+.limit locals 1
+.limit stack 1
+.end method
+
+.method static synthetic access$200(Lcom/nd/android/u/contact/view/SelectRecipientView;)Ljava/util/ArrayList;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/selectcontractlist Ljava/util/ArrayList;
+areturn
+.limit locals 1
+.limit stack 1
+.end method
+
+.method static synthetic access$300(Lcom/nd/android/u/contact/view/SelectRecipientView;Lcom/product/android/commonInterface/chat/SearchContract;)Z
+aload 0
+aload 1
+invokespecial com/nd/android/u/contact/view/SelectRecipientView/isGroupContainUser(Lcom/product/android/commonInterface/chat/SearchContract;)Z
+ireturn
+.limit locals 2
+.limit stack 2
+.end method
+
+.method static synthetic access$400(Lcom/nd/android/u/contact/view/SelectRecipientView;)Landroid/content/Context;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/mcontext Landroid/content/Context;
+areturn
+.limit locals 1
+.limit stack 1
+.end method
+
+.method private isGroupContainUser(Lcom/product/android/commonInterface/chat/SearchContract;)Z
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/grouplist Ljava/util/List;
+ifnull L0
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/grouplist Ljava/util/List;
+invokeinterface java/util/List/iterator()Ljava/util/Iterator; 0
+astore 2
+L1:
+aload 2
+invokeinterface java/util/Iterator/hasNext()Z 0
+ifeq L0
+aload 2
+invokeinterface java/util/Iterator/next()Ljava/lang/Object; 0
+checkcast com/product/android/commonInterface/contact/OapUser
+astore 3
+aload 1
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getFid()J
+aload 3
+invokevirtual com/product/android/commonInterface/contact/OapUser/getFid()J
+lcmp
+ifne L1
+iconst_1
+ireturn
+L0:
+iconst_0
+ireturn
+.limit locals 4
+.limit stack 4
+.end method
+
+.method public final getView()V
+getstatic com/product/android/business/config/Configuration/PRODUCT Lcom/product/android/business/ProductTypeDef$Product;
+getstatic com/product/android/business/ProductTypeDef$Product/PRODUCT_91XY Lcom/product/android/business/ProductTypeDef$Product;
+if_acmpne L0
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/mcontext Landroid/content/Context;
+invokestatic android/view/LayoutInflater/from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+getstatic com/nd/android/u/contact/R$layout/xy_select_recipient_item I
+aload 0
+iconst_1
+invokevirtual android/view/LayoutInflater/inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+pop
+L1:
+aload 0
+aload 0
+getstatic com/nd/android/u/contact/R$id/user_item_layout I
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/findViewById(I)Landroid/view/View;
+checkcast android/widget/LinearLayout
+putfield com/nd/android/u/contact/view/SelectRecipientView/userLayout Landroid/widget/LinearLayout;
+aload 0
+aload 0
+getstatic com/nd/android/u/contact/R$id/phonecontact_item_tx_name I
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/findViewById(I)Landroid/view/View;
+checkcast android/widget/TextView
+putfield com/nd/android/u/contact/view/SelectRecipientView/usernameText Landroid/widget/TextView;
+aload 0
+aload 0
+getstatic com/nd/android/u/contact/R$id/user_item_img_face I
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/findViewById(I)Landroid/view/View;
+checkcast android/widget/ImageView
+putfield com/nd/android/u/contact/view/SelectRecipientView/faceImg Landroid/widget/ImageView;
+aload 0
+aload 0
+getstatic com/nd/android/u/contact/R$id/phonecontact_item_tx_phoneNumber I
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/findViewById(I)Landroid/view/View;
+checkcast android/widget/TextView
+putfield com/nd/android/u/contact/view/SelectRecipientView/phoneText Landroid/widget/TextView;
+aload 0
+aload 0
+getstatic com/nd/android/u/contact/R$id/recipient_cb I
+invokevirtual com/nd/android/u/contact/view/SelectRecipientView/findViewById(I)Landroid/view/View;
+checkcast android/widget/CheckBox
+putfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/userLayout Landroid/widget/LinearLayout;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/myonclicklistener Landroid/view/View$OnClickListener;
+invokevirtual android/widget/LinearLayout/setOnClickListener(Landroid/view/View$OnClickListener;)V
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/myCheckedListener Landroid/widget/CompoundButton$OnCheckedChangeListener;
+invokevirtual android/widget/CheckBox/setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/phoneText Landroid/widget/TextView;
+invokevirtual android/widget/TextView/getText()Ljava/lang/CharSequence;
+invokestatic android/text/TextUtils/isEmpty(Ljava/lang/CharSequence;)Z
+ifeq L2
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/phoneText Landroid/widget/TextView;
+bipush 8
+invokevirtual android/widget/TextView/setVisibility(I)V
+L2:
+return
+L0:
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/mcontext Landroid/content/Context;
+invokestatic android/view/LayoutInflater/from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+getstatic com/nd/android/u/contact/R$layout/select_recipient_item I
+aload 0
+iconst_1
+invokevirtual android/view/LayoutInflater/inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+pop
+goto L1
+.limit locals 1
+.limit stack 4
+.end method
+
+.method public final initComponentValue(Lcom/product/android/commonInterface/chat/SearchContract;)V
+aload 1
+ifnull L0
+aload 1
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getFid()J
+lstore 2
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/selectcontractlist Ljava/util/ArrayList;
+invokevirtual java/util/ArrayList/iterator()Ljava/util/Iterator;
+astore 5
+L1:
+aload 1
+astore 4
+aload 5
+invokeinterface java/util/Iterator/hasNext()Z 0
+ifeq L2
+aload 5
+invokeinterface java/util/Iterator/next()Ljava/lang/Object; 0
+checkcast com/product/android/commonInterface/chat/SearchContract
+astore 4
+lload 2
+aload 4
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getFid()J
+lcmp
+ifne L1
+L2:
+aload 0
+aload 4
+putfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/usernameText Landroid/widget/TextView;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getUsername()Ljava/lang/String;
+invokestatic com/common/android/utils/StringUtils/getFliteStr(Ljava/lang/String;)Ljava/lang/String;
+invokevirtual android/widget/TextView/setText(Ljava/lang/CharSequence;)V
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/phoneText Landroid/widget/TextView;
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getSignature()Ljava/lang/String;
+invokestatic com/common/android/utils/StringUtils/getFliteStr(Ljava/lang/String;)Ljava/lang/String;
+invokevirtual android/widget/TextView/setText(Ljava/lang/CharSequence;)V
+getstatic com/product/android/business/config/Configuration/PRODUCT Lcom/product/android/business/ProductTypeDef$Product;
+getstatic com/product/android/business/ProductTypeDef$Product/PRODUCT_91XY Lcom/product/android/business/ProductTypeDef$Product;
+if_acmpne L3
+lload 2
+iconst_3
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/faceImg Landroid/widget/ImageView;
+getstatic com/product/android/business/headImage/HeadImageLoader/mFaceCircleDisplayOptions Lcom/nostra13/universalimageloader/core/DisplayImageOptions;
+invokestatic com/product/android/business/headImage/HeadImageLoader/displayCircleImage(JBLandroid/widget/ImageView;Lcom/nostra13/universalimageloader/core/DisplayImageOptions;)V
+aload 0
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+invokespecial com/nd/android/u/contact/view/SelectRecipientView/isGroupContainUser(Lcom/product/android/commonInterface/chat/SearchContract;)Z
+ifeq L4
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+bipush 8
+invokevirtual android/widget/CheckBox/setVisibility(I)V
+L5:
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+invokevirtual com/product/android/commonInterface/chat/SearchContract/isChecked()Z
+ifeq L6
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+iconst_1
+invokevirtual android/widget/CheckBox/setChecked(Z)V
+L0:
+return
+L4:
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+iconst_0
+invokevirtual android/widget/CheckBox/setVisibility(I)V
+goto L5
+L3:
+lload 2
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/user Lcom/product/android/commonInterface/chat/SearchContract;
+invokevirtual com/product/android/commonInterface/chat/SearchContract/getSysavatar()I
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/faceImg Landroid/widget/ImageView;
+invokestatic com/product/android/business/headImage/HeadImageLoader/displayImage(JILandroid/widget/ImageView;)V
+goto L5
+L6:
+aload 0
+getfield com/nd/android/u/contact/view/SelectRecipientView/recipient_cb Landroid/widget/CheckBox;
+iconst_0
+invokevirtual android/widget/CheckBox/setChecked(Z)V
+return
+.limit locals 6
+.limit stack 5
+.end method
